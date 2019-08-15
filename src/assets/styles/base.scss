@@ -1,1 +1,8 @@
-@import './common/reset.scss'
+@import "./common/reset.scss";
+// 可以在这里去修改引进插件的样式
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
