@@ -1,81 +1,83 @@
 // 1 引入vue
-import Vue from 'vue'
+import Vue from "vue"
 // 2 引入 vueRouter
-import VueRouter from 'vue-router'
+import VueRouter from "vue-router"
 // 引入页面进度条
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import NProgress from "nprogress"
+import "nprogress/nprogress.css"
 // 3 调用VueRouter
 Vue.use(VueRouter)
 // 4定义路由规则
 const routes = [
   // 一级路由
   {
-    path: '/',
-    component: () => import('./views/Home/index.vue'),
+    path: "/",
+    component: () => import("./views/Home/index.vue"),
+
+    redirect: "/films",
     meta: {
-      title: '首页'
+      title: "首页"
     },
     // 二级路由
     children: [
       {
-        path: 'films',
-        component: () => import('./views/Home/films.vue'),
+        path: "films",
+        component: () => import("./views/Home/films.vue"),
         meta: {
-          title: '电影页面'
+          title: "电影页面"
         }
       },
       {
-        path: 'cinemas',
-        component: () => import('./views/Home/cinemas.vue'),
+        path: "cinemas",
+        component: () => import("./views/Home/cinemas.vue"),
         meta: {
-          title: '影院页'
+          title: "影院页"
         }
       },
       {
-        path: 'center',
-        component: () => import('./views/Home/center.vue'),
+        path: "center",
+        component: () => import("./views/Home/center.vue"),
         meta: {
-          title: '个人中心'
+          title: "个人中心"
         }
       },
       {
-        path: 'jingtong',
-        component: () => import('./views/Home/jingdong.vue'),
+        path: "jingtong",
+        component: () => import("./views/Home/jingdong.vue"),
         meta: {
-          title: '京东页'
+          title: "京东页"
         }
       }
     ]
   },
   {
-    path: '/city',
-    component: () => import('./views/City/index.vue'),
+    path: "/city",
+    component: () => import("./views/City/index.vue"),
     meta: {
-      title: '城市选择页'
+      title: "城市选择页"
     }
   },
   {
-    path: '/film/:FilmId',
-    component: () => import('./views/Film/index.vue'),
+    path: "/film/:FilmId",
+    component: () => import("./views/Film/index.vue"),
     meta: {
-      title: '电影详情页'
+      title: "电影详情页"
     }
   },
   {
-    path: '/login',
-    component: () => import('./views/Login/index.vue'),
+    path: "/login",
+    component: () => import("./views/Login/index.vue"),
     meta: {
-      title: '登陆页'
+      title: "登陆页"
     }
   },
   {
-    path: '/money',
-    name: 'Money',
-    component: () => import('./views/Money/index.vue'),
+    path: "/money",
+    name: "Money",
+    component: () => import("./views/Money/index.vue"),
     meta: {
       // 传入title 为了给页面的标题设置名字
-      title: '钱包页',
+      title: "钱包页",
       // 这里设置一个条件判断当前组件需不需要登录 需要就加上
       needLogin: true
     }
